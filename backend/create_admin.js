@@ -1,6 +1,6 @@
 ﻿require('dotenv').config();
 const {Client} = require('pg');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const c = new Client({connectionString: process.env.DATABASE_URL});
 c.connect()
   .then(() => bcrypt.hash('finobras2026', 10))

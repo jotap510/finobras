@@ -117,7 +117,7 @@ app.get('/api/usuarios', authenticateToken, requireAdmin, async (req, res) => {
 
 app.post('/api/usuarios', authenticateToken, requireAdmin, async (req, res) => {
   try {
-    const bcrypt = require('bcrypt');
+    const bcrypt = require('bcryptjs');
     const { nombre, email, password, rol } = req.body;
     if (!nombre || !email || !password) {
       return res.status(400).json({ error: 'nombre, email y password son requeridos' });
